@@ -1,0 +1,14 @@
+.rule_btn{
+  position: absolute;
+    top: 0.266667rem;
+    right: 0.266667rem;
+    height: 0.693333rem;
+    line-height: 0.693333rem;
+    z-index: 2;
+    width: 1.333333rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.32rem;
+    background: url("../../../image/rule.png") no-repeat center;
+    background-size: 100%;
+}

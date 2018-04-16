@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "STHeitiSC-Light", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+a{
+  text-decoration: none;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+:global #main {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+.all {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+.box {
+  width: 750rpx;
+  height: 1000rpx;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollView{
+  height: 100%;
+  width: 100%;
+}
+/*  自适应结束  */
+.test{
+  height: 1000rpx;
+  width: 100%;
+  background-color: #ddd;
+  border-top: 3rpx solid #000;
+}

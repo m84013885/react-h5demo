@@ -1,0 +1,8 @@
+{
+  "consoleConfig":true,
+  "netWork":{
+    "host":"172.16.0.72",
+    "port":"8080"
+  },
+  "publicPath":"./"
+}

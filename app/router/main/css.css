@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "STHeitiSC-Light", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+a{
+  text-decoration: none;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+:global #main {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+.all {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+.box {
+  width: 750rpx;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollView{
+  height: 100%;
+  width: 100%;
+}
+.s{
+  height: 1500rpx;
+}
+/*  自适应结束  */
+
+.box{
+  width: 750rpx;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#190748), color-stop(77%, #64309D), to(#9146DD));
+  background-image: linear-gradient(-180deg, #190748 0%, #64309D 77%, #9146DD 100%);
+  position: relative;
+}
+.banner{
+  width: 750rpx;
+  height: 518rpx;
+  background: url("../../image/banner.png") no-repeat center;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+.goLive{
+  width: 234rpx;
+  height: 40rpx;
+  background: url("../../image/go.png") no-repeat center;
+  background-size: 100%;
+  position: relative;
+  top: 150rpx;
+}

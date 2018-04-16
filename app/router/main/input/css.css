@@ -1,0 +1,34 @@
+.inputBox{
+  margin:0 74rpx;
+  margin-top: 40rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  width: 80%;
+}
+
+.inviteInput{
+  text-align: center;
+  height: 84rpx;
+  width: 430rpx;
+  font-size: 30rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  border:0;
+  outline: none;
+  user-select:text;
+}
+
+.inviteButton{
+  background: #37F8A4;
+  border-radius: 10rpx;
+  width: 150rpx;
+  height: 84rpx;
+  font-family: PingFangSC-Semibold;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #230D54;
+  letter-spacing: 0;
+  text-align: center;
+}
