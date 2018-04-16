@@ -23,12 +23,6 @@ class Index extends React.Component {
     return (
       <Provider {...stores}>
         <App noSysScroll={true}>
-          {/* <ScrollView className={style.box} direction={'column'}getScrollControl={(res) => { this.setScrollControl = res }} scrollbars={false} bounce={false} mouseWheel={false}>
-            <View className={style.box} tap={() => { this.test() }}></View>
-            <View tap={() => { this.test() }}>123</View>
-          </ScrollView> */}
-          {/* <View className={style.test} touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}>123</View>
-          <View className={style.test}>123</View> */}
           <One touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
           <Two />
           <Three/>
