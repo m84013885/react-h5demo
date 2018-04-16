@@ -36,6 +36,16 @@ class Store {
   @action showLoad (bool) {
     this.load = bool
   }
+
+  @observable swiperTop = 0
+  @action autoTop (height) {
+    this.swiperTop = height
+  }
+
+  @observable domNode
+  @action resetDom (length) {
+    this.domNode = length
+  }
 }
 const store = new Store()
 

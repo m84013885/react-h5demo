@@ -12,7 +12,7 @@ import { observer, inject } from 'mobx-react'
   }
   render () {
     return (
-      <View className={style.box} touchStart={(e)=>{this.props.touchStart(e)}} touchEnd={(e)=>{this.props.touchEnd(e)}}>1</View>
+      <View className={style.box} style={{top:0}} touchStart={(e)=>{this.props.touchStart(e)}} touchEnd={(e)=>{this.props.touchEnd(e)}}>1</View>
     )
   }
 }
