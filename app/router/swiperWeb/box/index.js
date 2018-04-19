@@ -11,6 +11,9 @@ import Four from './../four'
 import Five from './../five'
 import Six from './../six'
 import Seven from './../seven'
+import Eight from './../eight'
+import Nine from './../nine'
+import Ten from './../ten'
 
 @inject('store') @observer class Box extends React.Component {
   constructor (props) {
@@ -51,6 +54,9 @@ import Seven from './../seven'
             <Five touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
             <Six touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
             <Seven touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+            <Eight touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+            <Nine touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+            <Ten touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
         </View>
     )
   }
