@@ -7,6 +7,11 @@ import { observer, inject } from 'mobx-react'
 import One from './../one'
 import Two from './../two'
 import Three from './../three'
+import Four from './../four'
+import Five from './../five'
+import Six from './../six'
+import Seven from './../seven'
+
 @inject('store') @observer class Box extends React.Component {
   constructor (props) {
     super(props)
@@ -22,17 +27,18 @@ import Three from './../three'
   tEnd(e){
     if(this.state.startY<e.changedTouches[0].clientY){
     //   console.log("向下滑")
-      
-      this.props.store.swiperTop!=0?this.props.store.autoTop(this.props.store.swiperTop-1):""
+      let sto= this.props.store
+      sto.swiperTop!=0?sto.autoTop(sto.swiperTop-1):""
     }else{
     //   console.log("向上滑")
-      this.props.store.swiperTop!=this.props.store.domNode-1?this.props.store.autoTop(this.props.store.swiperTop+1):""
+      let sto= this.props.store
+      sto.swiperTop!=sto.domNode-1?sto.autoTop(sto.swiperTop+1):""
     }
   }
   swiperBox(dom){
     if(dom){
-      this.setState({swiperHeight:dom.childNodes.length})
-      this.props.store.resetDom(dom.childNodes.length)
+      this.setState({swiperHeight:dom.childElementCount})
+      this.props.store.resetDom(dom.childElementCount)
     }
   }
   render () {
@@ -41,6 +47,10 @@ import Three from './../three'
             <One touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
             <Two touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
             <Three touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+            <Four touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+            <Five touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+            <Six touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+            <Seven touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
         </View>
     )
   }
