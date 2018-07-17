@@ -18,7 +18,7 @@ class View extends React.Component {
     animationEnd: PropTypes.func,
     contextMenu: PropTypes.func,
     getRef: PropTypes.func,
-    id: PropTypes.string
+    id: PropTypes.number
   }
   tapFlag = false // 用于记录是否tap了（出现touchmove 行为则不为tap）
   tapTouchPos = { x: 0, y: 0 }

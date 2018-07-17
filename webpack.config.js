@@ -31,7 +31,7 @@ const webpackConfig = {
     contentBase: path.join(__dirname, 'build'),
     compress: true,
     port: 8080,
-    host: "172.16.0.126",
+    host: "172.16.0.141",
     historyApiFallback: true
   },
   plugins: [

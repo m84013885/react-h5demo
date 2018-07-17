@@ -19,6 +19,7 @@ import Ten from './../ten'
   constructor (props) {
     super(props)
     this.state = {
+        boxIndex:0,
         startY:"",
         swiperHeight:""
     }
@@ -31,11 +32,26 @@ import Ten from './../ten'
     if(this.state.startY<e.changedTouches[0].clientY){
     //   console.log("向下滑")
       let sto= this.props.store
-      sto.swiperTop!=0?sto.autoTop(sto.swiperTop-1):""
-    }else{
+      this.state.boxIndex!=0?this.setState({boxIndex:this.state.boxIndex-1}):""
+      this.state.boxIndex!=0?sto.autoTop(Math.ceil(sto.swiperTop-1+this.state.swiperOut)):sto.autoTop(0)
+    }else if(this.state.startY>e.changedTouches[0].clientY){
     //   console.log("向上滑")
       let sto= this.props.store
-      sto.swiperTop!=sto.domNode-1?sto.autoTop(sto.swiperTop+1):""
+      this.state.boxIndex!=sto.domNode-1?sto.autoTop(Math.ceil(sto.swiperTop+1-this.state.swiperOut)):sto.autoTop(sto.domNode-1)
+      this.state.boxIndex!=sto.domNode-1?this.setState({boxIndex:this.state.boxIndex+1}):""
+    }
+  }
+  tMove(e){
+    let sto= this.props.store
+    let swiperNow = this.state.boxIndex
+    let clientHeight = document.getElementById('main').clientHeight
+    this.setState({swiperOut:(this.state.startY-e.changedTouches[0].clientY)/clientHeight})
+    if(this.state.startY>e.changedTouches[0].clientY && this.state.boxIndex!=sto.domNode-1){
+      let height = (this.state.startY-e.changedTouches[0].clientY)/clientHeight+swiperNow
+      sto.autoTop(height)
+    }else if(this.state.startY<e.changedTouches[0].clientY && this.state.boxIndex!=0){
+      let height = swiperNow-(e.changedTouches[0].clientY-this.state.startY)/clientHeight
+      sto.autoTop(height)
     }
   }
   swiperBox(dom){
@@ -46,17 +62,17 @@ import Ten from './../ten'
   }
   render () {
     return (
-        <View getRef={this.swiperBox} className={style.main} style={{height:this.state.swiperHeight+"00%",bottom:this.props.store.swiperTop+"00%"}}>
-            <One touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Two touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Three touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Four touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Five touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Six touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Seven touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Eight touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Nine touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
-            <Ten touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}}/>
+        <View getRef={this.swiperBox} className={style.main} id={this.state.boxIndex} style={{height:this.state.swiperHeight+"00%",bottom:this.props.store.swiperTop*100+"%"}}>
+            <One touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Two touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Three touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Four touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Five touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Six touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Seven touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Eight touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Nine touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
+            <Ten touchStart={(e)=>{this.tStart(e)}} touchEnd={(e)=>{this.tEnd(e)}} touchMove={(e)=>{this.tMove(e)}}/>
         </View>
     )
   }

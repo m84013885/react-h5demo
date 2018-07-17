@@ -14,6 +14,7 @@ class Index extends React.Component {
     }
 
   }
+  
   render () {
     return (
       <Provider {...stores}>
@@ -21,6 +22,7 @@ class Index extends React.Component {
           <Box/>
         </App></Provider>
     )
+
   }
 }
 export default Index
